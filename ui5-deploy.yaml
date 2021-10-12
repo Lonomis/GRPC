@@ -14,10 +14,9 @@ builder:
       afterTask: generateCachebusterInfo
       configuration:
         target:
-          url: http://saps4hapdv1.ps.co.th:8000/
-          client: "120"
+          destination: ERD_120
         app:
           name: ZMMO071_303
-          description: null
+          description: ""
           package: ZMM
           transport: ERDK901523
