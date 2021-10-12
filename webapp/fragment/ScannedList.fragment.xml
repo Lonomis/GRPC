@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Table
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+            path:   'scannedData>/ScannedData',
+            sorter: {
+                path: 'OrderNo'
+            }
+        }">
+        <columns>
+            <Column>
+                <Text   text="{i18n>scannedList.Order}"/>
+            </Column>
+            <Column>
+                <Text   text="{i18n>scannedList.Item}"/>
+            </Column>
+            <Column>
+                <Text   text="{i18n>scannedList.Status}"/>
+            </Column>
+            <Column>
+                <Text   text="{i18n>scannedList.Count}"/>
+            </Column>
+            <Column>
+                <Text   text="{i18n>scannedList.Vendor}"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text   text="{scannedData>OrderNo}"/>
+                    <Text   text="{scannedData>Material}"/>
+                    <ObjectStatus   
+                            text="{= ${scannedData>Reject} ? 'Reject' : 'Pass'}"
+                            state="{= ${scannedData>Reject} ? 'Error' : 'Success'}" />
+                    <Text   text="{scannedData>Count}"/>
+                    <Text   text="{scannedData>Vendor}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

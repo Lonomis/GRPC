@@ -1,0 +1,165 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:n="sap.ndc">
+    <f:Form editable="true">
+        <f:layout>
+            <f:ResponsiveGridLayout
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"/>
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>productionOrder}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/ProductionOrder}" 
+                                    maxLength="12"
+                                    required="true">
+                                <layoutData>
+                                    <l:GridData span="XL3 L3 M3 S8"/>
+                                </layoutData>
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:fields>
+                            <Button text="{i18n>getData}"
+                                    press="onGetData">
+                                <layoutData>
+                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                </layoutData>
+                            </Button>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>material}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/Material}"
+                                    maxLength="40"
+                                    editable="false">
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>wbs}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/WBS}"
+                                    maxLength="24"
+                                    editable="false">
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>materialName}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/MaterialName}"
+                                    maxLength="40"
+                                    editable="false">
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>count}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{path :  'input>/Count',
+                                            type :  'sap.ui.model.type.Integer',
+                                            constraints :   {
+                                                minimum     :   '0',
+                                                maximum     :   '99'
+                                            }}"
+                                    type="Number"
+                                    required="true">
+                                <layoutData>
+                                    <l:GridData span="XL1 L1 M1 S2"/>
+                                </layoutData>
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{=${input>/Reject}? ${i18n>slocReject} : ${i18n>moveToSloc}}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/StorageLocation}"
+                                    showValueHelp="true"
+                                    valueHelpRequest="onSLocSearch"
+                                    maxLength="4"
+                                    type="Text"
+                                    required="true">
+                                <layoutData>
+                                    <l:GridData span="XL3 L3 M3 S8"/>
+                                </layoutData>
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:fields>
+                            <Button text="{=${input>/Reject}? ${i18n>pass} : ${i18n>reject}}"
+                                    type="{=${input>/Reject}? 'Accept' : 'Reject'}"
+                                    press="onPressReject">
+                                <layoutData>
+                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                </layoutData>
+                            </Button>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>vendor}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Input  value="{input>/Vendor}"
+                                    required="true"
+                                    maxLength="10">
+                                <layoutData>
+                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                </layoutData>
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement>
+                        <f:label>
+                            <Label  text="{i18n>orderCount}"
+                                    design="Bold"/>
+                        </f:label>
+                        <f:fields>
+                            <Text  text="{scannedData>/OrderCount}"/>
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+</core:FragmentDefinition>

@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="zmmo071303.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox	id="contentVBox"/>
+						<l:VerticalLayout	id="messageStripArea"
+											class="sapUiContentPadding"
+											width="100%"/>
+					</content>
+					<footer>
+						<OverflowToolbar>
+							<content>
+								<Button
+									id="messagePopOverButton"
+									icon="sap-icon://message-popup"
+									type="Emphasized"
+									text="{=${messages>/}.length}"
+									visible="{=!!${messages>/}.length}"
+									press="onMessagePopover"/>
+								<ToolbarSpacer/>
+								<Button 
+									id="barcodeScannerId"
+									text="{i18n>scan}"
+									visible="{= ${barcode>/available}
+											&amp;&amp;${fragment>/activeFragment} === 'Init'}"
+									icon="sap-icon://bar-code"
+									press="onScan"/>
+								<Button
+									text="{i18n>scannedList}"
+									visible="{= ${fragment>/activeFragment} === 'Init'
+											&amp;&amp;!!${scannedData>/OrderCount}}"
+									press="onScannedList"/>
+								<Button
+									text="{i18n>cancel}"
+									type="Reject"
+									visible="{= ${fragment>/activeFragment} === 'Init'
+											&amp;&amp;(!!${input>/ProductionOrder}
+											||!!${input>/Count}
+											||!!${input>/StorageLocation}
+											||!!${input>/Vendor})}"
+									press="onCancel"/>
+								<Button
+									text="{i18n>next}"
+									type="Emphasized"
+									visible="{= ${fragment>/activeFragment} === 'Init'
+											&amp;&amp;(!!${input>/ProductionOrder}
+											&amp;&amp;!!${input>/Material}
+											&amp;&amp;!!${input>/Count}
+											&amp;&amp;!!${input>/StorageLocation}
+											&amp;&amp;!!${input>/Vendor})}"
+									press="onNext"/>
+								<Button
+									text="{i18n>save}"
+									type="Accept"
+									visible="{= ${fragment>/activeFragment} === 'Init'
+											&amp;&amp;!!${scannedData>/OrderCount}}"
+									press="onSave"/>
+								<Button	text="{i18n>back}"
+									visible="{= ${fragment>/activeFragment} === 'ScannedList'}"
+									press="onScannedListBack"/>
+							</content>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

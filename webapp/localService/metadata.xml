@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_MM_GUIXT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="GoodsReceiptPC" sap:label="Goods Receipt PC" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TransactionId"/>
+                </Key>
+                <Property Name="TransactionId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialDocumentNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Material Document no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PreId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Pre Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TransactionCode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Transaction Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToItems" Relationship="ZGW_MM_GUIXT_SRV.ToItems" FromRole="FromRole_ToItems" ToRole="ToRole_ToItems"/>
+            </EntityType>
+            <EntityType Name="GoodsReceiptPCItem" sap:label="Goods Receipt PC Item" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TransactionId"/>
+                    <PropertyRef Name="ItemNo"/>
+                </Key>
+                <Property Name="TransactionId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Transaction Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ItemNo" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reject" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Reject" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Storage Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MovementType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Movement Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StockType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Stock Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValuationType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Valuation Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EntryQty" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Entry Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vendor" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Count" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Count" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderNo" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Barcode" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Barcode" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="OrderData">
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Material Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WBS" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="WBS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductionVersion" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Production Version" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RackID" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Rack ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Storage Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderType" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Order Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:label="Order Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderNo" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Order Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="PCFSloc">
+                <Property Name="OrderNo" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Order No" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Storage Location" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StorageLocationName" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Storage Location Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="ToItems" sap:content-version="1">
+                <End Type="ZGW_MM_GUIXT_SRV.GoodsReceiptPC" Multiplicity="1" Role="FromRole_ToItems"/>
+                <End Type="ZGW_MM_GUIXT_SRV.GoodsReceiptPCItem" Multiplicity="*" Role="ToRole_ToItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ToItems">
+                        <PropertyRef Name="TransactionId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ToItems">
+                        <PropertyRef Name="TransactionId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW_MM_GUIXT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="GoodsReceiptPCs" EntityType="ZGW_MM_GUIXT_SRV.GoodsReceiptPC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="GoodsReceiptPCItems" EntityType="ZGW_MM_GUIXT_SRV.GoodsReceiptPCItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="ToItemsSet" Association="ZGW_MM_GUIXT_SRV.ToItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="GoodsReceiptPCs" Role="FromRole_ToItems"/>
+                    <End EntitySet="GoodsReceiptPCItems" Role="ToRole_ToItems"/>
+                </AssociationSet>
+                <FunctionImport Name="GetPCOrder" ReturnType="ZGW_MM_GUIXT_SRV.OrderData" m:HttpMethod="GET" sap:label="Get Order">
+                    <Parameter Name="RackNo" Type="Edm.String" Mode="In" MaxLength="2"/>
+                    <Parameter Name="TransportationType" Type="Edm.String" Mode="In" MaxLength="1"/>
+                    <Parameter Name="OrderNo" Type="Edm.String" Mode="In" MaxLength="12"/>
+                </FunctionImport>
+                <FunctionImport Name="GetPCFSloc" ReturnType="Collection(ZGW_MM_GUIXT_SRV.PCFSloc)" m:HttpMethod="GET" sap:label="Get PCF Storage Location">
+                    <Parameter Name="OrderNo" Type="Edm.String" Mode="In" MaxLength="12"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self" href="http://saps4hapdv1.ps.co.th:8000/sap/opu/odata/sap/ZGW_MM_GUIXT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://saps4hapdv1.ps.co.th:8000/sap/opu/odata/sap/ZGW_MM_GUIXT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <SelectDialog
+        title="{i18n>storageLocationDialogTitle}"
+        class="sapUiPopupWithPadding"
+        items="{sloc>/SlocList}"
+        search="onSearch"
+        confirm="onSlocChoose">
+        <items>
+            <StandardListItem
+                title="{sloc>StorageLocation}"
+                description="{sloc>StorageLocationName}"/>
+        </items>
+    </SelectDialog>
+</core:FragmentDefinition>
