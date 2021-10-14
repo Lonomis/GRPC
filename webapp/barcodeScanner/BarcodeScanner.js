@@ -30,7 +30,7 @@ sap.ui.define([
                             resolve({
                                 status  :   that.SuccessStatus,
                                 details :   {
-                                    ProductionOrder     :   oResult.text.substring(1,16),
+                                    ProductionOrder     :   oResult.text.substring(4,16),
                                     Barcode             :   oResult.Barcode
                                 }
                             });
