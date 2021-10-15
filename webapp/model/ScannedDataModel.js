@@ -38,8 +38,7 @@ sap.ui.define([
                 StorageLocation     :   oInputData.StorageLocation,
                 Vendor              :   oInputData.Vendor,
                 Count               :   oInputData.Count,
-                OrderNo             :   oInputData.ProductionOrder,
-                Barcode             :   oInputData.Barcode
+                OrderNo             :   oInputData.ProductionOrder
             }
 
             oScannedData.ScannedData.push(oToBeAppendData);

@@ -95,8 +95,7 @@ sap.ui.define([
                     StorageLocation :   oScannedData.StorageLocation,
                     Vendor          :   oScannedData.Vendor,
                     Count           :   oScannedData.Count.toString(),
-                    OrderNo         :   oScannedData.OrderNo,
-                    Barcode         :   oScannedData.Barcode
+                    OrderNo         :   oScannedData.OrderNo
                 });
             });
 

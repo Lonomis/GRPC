@@ -30,8 +30,7 @@ sap.ui.define([
                             resolve({
                                 status  :   that.SuccessStatus,
                                 details :   {
-                                    ProductionOrder     :   oResult.text.substring(4,16),
-                                    Barcode             :   oResult.Barcode
+                                    ProductionOrder     :   (oResult.text.length >= 12 ? oResult.text : oResult.text.substring(4,16))
                                 }
                             });
                         } else {

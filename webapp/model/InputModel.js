@@ -24,8 +24,7 @@ sap.ui.define([
                 Count                   :   0,
                 StorageLocation         :   "",
                 Reject                  :   "",
-                Vendor                  :   "",
-                Barcode                 :   ""
+                Vendor                  :   ""
             }
         },
 
@@ -51,7 +50,6 @@ sap.ui.define([
             oData.StorageLocation       =   oInputdata.StorageLocation;
             oData.Reject                =   oInputdata.Reject;
             oData.Vendor                =   oInputdata.Vendor;
-            oData.Barcode               =   oInputdata.Barcode;
 
             this._oModel.setData(oData);
         },
@@ -64,7 +62,6 @@ sap.ui.define([
             var oInputData	=	this.getInitialData();
 
             oInputData.ProductionOrder		=   oResult.ProductionOrder;
-            oInputData.Barcode              =   oResult.Barcode;
             this.setData(oInputData);
         },
 
