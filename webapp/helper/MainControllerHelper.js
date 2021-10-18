@@ -45,7 +45,6 @@ sap.ui.define([
             oInputModel.clearData();
         } catch {
             BusyIndicator.hide();
-            oInputModel.clearData();
         }
 
        },
