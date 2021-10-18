@@ -125,9 +125,10 @@ sap.ui.define([
 				MainControllerHelper.clearMessages(this.MessageStrip, this.MessagePopover, this.InputModel);
 			},
 
-			onNext: async function(oEvent) {
+			onNext: function(oEvent) {
 				MainControllerHelper.clearMessages(this.MessageStrip, this.MessagePopover, this.InputModel);
-				MainControllerHelper.keepInputData(this.InputModel,
+                MainControllerHelper.keepInputData(this.InputModel,
+                                                   this.OrderModel,
 												   this.ScannedDataModel);
 			},
 

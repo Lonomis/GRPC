@@ -32,12 +32,22 @@ sap.ui.define([
             oSlocDialog.openDialog(oView);
        },
 
-       keepInputData : function(oInputModel, oScannedDataModel) {
-            var oInputData = oInputModel.getData();
+       keepInputData : async function(oInputModel, oOrderModel, oScannedDataModel) {
+        var oInputData = oInputModel.getData();
 
+        try {
+            BusyIndicator.show(0);
+            await oOrderModel.getOrderData(oInputData.ProductionOrder);
+            BusyIndicator.hide();
+            
             oScannedDataModel.appendScannedData(oInputData);
 
             oInputModel.clearData();
+        } catch {
+            BusyIndicator.hide();
+            oInputModel.clearData();
+        }
+
        },
 
        clearMessages : function(oMessageStrip, oMessagePopover, oInputModel) {
