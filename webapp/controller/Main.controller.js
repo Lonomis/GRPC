@@ -171,6 +171,6 @@ sap.ui.define([
 				} catch (oError) {
 					
 				}
-			}
+            }
 		});
 	});
