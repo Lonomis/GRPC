@@ -126,10 +126,17 @@ sap.ui.define([
 			},
 
 			onNext: function(oEvent) {
-				MainControllerHelper.clearMessages(this.MessageStrip, this.MessagePopover, this.InputModel);
-                MainControllerHelper.keepInputData(this.InputModel,
-                                                   this.OrderModel,
-												   this.ScannedDataModel);
+                MainControllerHelper.clearMessages(this.MessageStrip, this.MessagePopover, this.InputModel);
+
+                try {
+                    MainControllerHelper.validateRequiredFields(this.MessagePopover);
+                    MainControllerHelper.validateValue(this.MessagePopover);
+                    MainControllerHelper.keepInputData(this.InputModel,
+                                                       this.OrderModel,
+												       this.ScannedDataModel);   
+                } catch (oError) {
+                    
+                }
 			},
 
 			onScannedList:	function(oEvent){

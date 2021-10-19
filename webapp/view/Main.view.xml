@@ -51,12 +51,7 @@
 								<Button
 									text="{i18n>next}"
 									type="Emphasized"
-									visible="{= ${fragment>/activeFragment} === 'Init'
-											&amp;&amp;(!!${input>/ProductionOrder}
-											&amp;&amp;!!${input>/Material}
-											&amp;&amp;!!${input>/Count}
-											&amp;&amp;!!${input>/StorageLocation}
-											&amp;&amp;!!${input>/Vendor})}"
+									visible="{= ${fragment>/activeFragment} === 'Init'}"
 									press="onNext"/>
 								<Button
 									text="{i18n>save}"

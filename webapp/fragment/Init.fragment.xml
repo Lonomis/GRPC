@@ -36,6 +36,14 @@
                                 <layoutData>
                                     <l:GridData span="XL3 L3 M3 S8"/>
                                 </layoutData>
+                                <customData>
+                                    <core:CustomData key="required"
+                                                     value="true"
+                                                     writeToDom="true"/>
+                                    <core:CustomData key="name"
+                                                     value="{i18n>productionOrder}"
+                                                     writeToDom="true"/>
+                                </customData>
                             </Input>
                         </f:fields>
                     </f:FormElement>
@@ -91,17 +99,20 @@
                                     design="Bold"/>
                         </f:label>
                         <f:fields>
-                            <Input  value="{path :  'input>/Count',
-                                            type :  'sap.ui.model.type.Integer',
-                                            constraints :   {
-                                                minimum     :   '0',
-                                                maximum     :   '99'
-                                            }}"
+                            <Input  value="{input>/Count}"
                                     type="Number"
                                     required="true">
                                 <layoutData>
                                     <l:GridData span="XL1 L1 M1 S2"/>
                                 </layoutData>
+                                <customData>
+                                    <core:CustomData key="required"
+                                                     value="true"
+                                                     writeToDom="true"/>
+                                    <core:CustomData key="name"
+                                                     value="{i18n>count}"
+                                                     writeToDom="true"/>
+                                </customData>
                             </Input>
                         </f:fields>
                     </f:FormElement>
@@ -120,6 +131,14 @@
                                 <layoutData>
                                     <l:GridData span="XL3 L3 M3 S8"/>
                                 </layoutData>
+                                <customData>
+                                    <core:CustomData key="required"
+                                                     value="true"
+                                                     writeToDom="true"/>
+                                    <core:CustomData key="name"
+                                                     value="{=${input>/Reject}? ${i18n>slocReject} : ${i18n>moveToSloc}}"
+                                                     writeToDom="true"/>
+                                </customData>
                             </Input>
                         </f:fields>
                     </f:FormElement>
@@ -146,6 +165,14 @@
                                 <layoutData>
                                     <l:GridData span="XL2 L2 M2 S4"/>
                                 </layoutData>
+                                <customData>
+                                    <core:CustomData key="required"
+                                                     value="true"
+                                                     writeToDom="true"/>
+                                    <core:CustomData key="name"
+                                                     value="{i18n>vendor}"
+                                                     writeToDom="true"/>
+                                </customData>
                             </Input>
                         </f:fields>
                     </f:FormElement>
