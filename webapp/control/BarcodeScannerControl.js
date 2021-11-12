@@ -157,6 +157,11 @@ sap.ui.define([
             text: "{i18n>BARCODE_DIALOG_CANCEL}",
             press: function() {
                 d.closeScanDialog();
+                if (typeof o.onFail === "function") {
+                    o.onFail({
+                        cancelled: true
+                    });
+                }
             }
         }));
         S.setBusy(false);
