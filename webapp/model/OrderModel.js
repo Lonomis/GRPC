@@ -44,6 +44,7 @@ sap.ui.define([
 
         buildGetOrderParameter: function(sOrderNo){
             return {
+                "Flag"                  :   "X",
                 "OrderNo"               :   ( !sOrderNo ? "" : sOrderNo),
                 "RackNo"                :   "00",
                 "TransportationType"    :   "0"
