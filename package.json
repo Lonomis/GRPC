@@ -19,7 +19,8 @@
         "deploy-config": "fiori add deploy-config",
         "unit-tests": "fiori run --open test/unit/unitTests.qunit.html",
         "int-tests": "fiori run --open test/integration/opaTests.qunit.html",
-        "undeploy": "fiori undeploy --config ui5-deploy.yaml"
+        "undeploy": "fiori undeploy --config ui5-deploy.yaml",
+        "deploy-test": "npm run build && fiori deploy --config ui5-deploy.yaml --testMode true"
     },
     "devDependencies": {
         "@ui5/cli": "^2.11.1",

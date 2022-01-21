@@ -65,7 +65,12 @@ sap.ui.define([
     function u() {
         Z = sap.ui.requireSync("zmmo071303/lib/ZXing");
         if (Z) {
-            z = new Z.BrowserMultiFormatReader();
+            const hints = new Map();
+            const formats = [Z.BarcodeFormat.PDF_417];
+
+            hints.set(Z.DecodeHintType.POSSIBLE_FORMATS, formats);
+            z = new Z.BrowserMultiFormatReader( hints, 1500 );
+            
             if (z) {
                 L.debug("ZXing BrowserMultiFormatReader API is available!");
             } else {

@@ -15,8 +15,9 @@ builder:
       configuration:
         target:
           destination: ERD_120
+          url: http://dev.sap.com:8080
         app:
           name: ZMMO071_303
           description: ""
           package: ZMM
-          transport: ERDK901523
+          transport: ERDK904296
