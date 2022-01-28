@@ -34,7 +34,7 @@
                                     maxLength="12"
                                     required="true">
                                 <layoutData>
-                                    <l:GridData span="XL3 L3 M3 S8"/>
+                                    <l:GridData span="L5 M5 S8"/>
                                 </layoutData>
                                 <customData>
                                     <core:CustomData key="required"
@@ -52,7 +52,7 @@
                             <Button text="{i18n>getData}"
                                     press="onGetData">
                                 <layoutData>
-                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                    <l:GridData span="L2 M2 S4"/>
                                 </layoutData>
                             </Button>
                         </f:fields>
@@ -103,7 +103,7 @@
                                     type="Number"
                                     required="true">
                                 <layoutData>
-                                    <l:GridData span="XL1 L1 M1 S2"/>
+                                    <l:GridData span="L3 M3 S4"/>
                                 </layoutData>
                                 <customData>
                                     <core:CustomData key="required"
@@ -129,7 +129,7 @@
                                     type="Text"
                                     required="true">
                                 <layoutData>
-                                    <l:GridData span="XL3 L3 M3 S8"/>
+                                    <l:GridData span="L5 M5 S8"/>
                                 </layoutData>
                                 <customData>
                                     <core:CustomData key="required"
@@ -148,7 +148,7 @@
                                     type="{=${input>/Reject}? 'Accept' : 'Reject'}"
                                     press="onPressReject">
                                 <layoutData>
-                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                    <l:GridData span="L2 M2 S4"/>
                                 </layoutData>
                             </Button>
                         </f:fields>
@@ -163,7 +163,7 @@
                                     required="true"
                                     maxLength="10">
                                 <layoutData>
-                                    <l:GridData span="XL2 L2 M2 S4"/>
+                                    <l:GridData span="L5 M5 S8"/>
                                 </layoutData>
                                 <customData>
                                     <core:CustomData key="required"
